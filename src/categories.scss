@@ -1,0 +1,23 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color: rgb(19, 19, 19);
+  --color-light: hsl(0, 0%, 95%);
+  --bg-color: hsl(0, 0%, 100%);
+  --bg-color-opacity: hsl(0, 0%, 100%, 0.2);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
