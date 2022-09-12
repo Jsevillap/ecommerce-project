@@ -1,5 +1,5 @@
 import { Outlet, Link } from "react-router-dom";
-import ReactLogo from "../../assets/react.svg";
+import ReactLogo from "../../assets/dobleEE.svg";
 
 const Navigation = () => {
   return (
