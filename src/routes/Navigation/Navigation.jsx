@@ -1,33 +1,39 @@
 import { Outlet, Link } from "react-router-dom";
+import { AiOutlineShoppingCart } from "react-icons/all";
 import ReactLogo from "../../assets/dobleEE.svg";
 
 const Navigation = () => {
   return (
     <>
-      <nav>
-        <div className="logo">
-          <Link to="/">
-            <img src={ReactLogo} alt="React Logo" />
-          </Link>
-        </div>
-        <ul className="nav-links">
-          <li className="nav-link">
-            <Link to="/shop">Shop</Link>
-          </li>
+      <div className="nav-container">
+        <nav className="container">
+          <div className="logo">
+            <Link to="/">
+              <img src={ReactLogo} alt="React Logo" />
+            </Link>
+          </div>
+          <ul className="nav-links">
+            <li className="nav-link">
+              <Link to="/shop">Shop</Link>
+            </li>
 
-          <li className="nav-link">
-            <Link to="/shop">Sign in</Link>
-          </li>
+            <li className="nav-link">
+              <Link to="/signIn">Sign in</Link>
+            </li>
 
-          <li className="nav-link">
-            <Link to="/shop">Contact</Link>
-          </li>
+            <li className="nav-link">
+              <Link to="/shop">Contact</Link>
+            </li>
 
-          <li className="nav-link">
-            <Link to="/shop">Cart</Link>
-          </li>
-        </ul>
-      </nav>
+            <li className="nav-link cart">
+              <Link to="/shop">
+                <AiOutlineShoppingCart />
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
       <Outlet />
     </>
   );
