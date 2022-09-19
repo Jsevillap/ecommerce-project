@@ -1,6 +1,6 @@
 import { Outlet, Link } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/all";
-import ReactLogo from "../../assets/dobleEE.svg";
+import dobleEELogo from "../../assets/dobleEE.svg";
 
 const Navigation = () => {
   return (
@@ -9,7 +9,7 @@ const Navigation = () => {
         <nav className="container">
           <div className="logo">
             <Link to="/">
-              <img src={ReactLogo} alt="React Logo" />
+              <img src={dobleEELogo} alt="React Logo" />
             </Link>
           </div>
           <ul className="nav-links">
