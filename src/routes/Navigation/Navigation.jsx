@@ -1,8 +1,17 @@
+import { useContext } from "react";
+import { UserContext } from "../../contexts/User";
 import { Outlet, Link } from "react-router-dom";
-import { AiOutlineShoppingCart } from "react-icons/all";
+import { AiOutlineShoppingCart, SiPandas } from "react-icons/all";
+import { signOutUser } from "../../utils/firebase/firebase";
 import dobleEELogo from "../../assets/dobleEE.svg";
 
 const Navigation = () => {
+  const { currentUser } = useContext(UserContext);
+
+  const signOutHandler = async () => {
+    await signOutUser();
+  };
+
   return (
     <>
       <div className="nav-container">
@@ -18,7 +27,11 @@ const Navigation = () => {
             </li>
 
             <li className="nav-link">
-              <Link to="/signIn">Sign in</Link>
+              {currentUser ? (
+                <span onClick={signOutHandler}>Sign-out</span>
+              ) : (
+                <Link to="/signIn">Sign in</Link>
+              )}
             </li>
 
             <li className="nav-link">

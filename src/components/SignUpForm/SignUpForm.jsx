@@ -44,7 +44,8 @@ const SignUpForm = () => {
   return (
     <section className="container sign-up-container">
       <div className="form-container">
-        <h2>Don't have an account? Register</h2>
+        <h2>Don't have an account? </h2>
+        <p>Register</p>
         <form onSubmit={onSubmitHandler}>
           <FormInput
             htmlFor="name"

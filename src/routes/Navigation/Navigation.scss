@@ -19,8 +19,13 @@ nav {
     min-width: 150px;
   }
 
-  & a {
+  & a,
+  & span {
     color: var(--bg-color);
+  }
+
+  & span:hover {
+    cursor: pointer;
   }
 
   & ul {

@@ -2,7 +2,6 @@ import { useState } from "react";
 import FormInput from "../FormInput/FormInput";
 import {
   signInWithGooglePopup,
-  createUserDocumentFromAuth,
   signInUserWithEmailAndPassword,
 } from "../../utils/firebase/firebase";
 
@@ -24,7 +23,7 @@ const SignInForm = () => {
     e.preventDefault();
 
     try {
-      const response = await signInUserWithEmailAndPassword(email, password);
+      const { user } = await signInUserWithEmailAndPassword(email, password);
       resetForm();
       alert("succesfully logged in");
     } catch (error) {
@@ -46,20 +45,20 @@ const SignInForm = () => {
   };
 
   const logGoogleUser = async () => {
-    const { user } = await signInWithGooglePopup();
-    const userDocRef = await createUserDocumentFromAuth(user);
+    await signInWithGooglePopup();
   };
 
   return (
     <section className="container sign-up-container">
       <div className="form-container">
-        <h2>Log in with email and password</h2>
+        <h2>Log in</h2>
+        <p>with email and password</p>
         <form onSubmit={onSubmitHandler}>
           <FormInput
-            htmlFor="email"
+            htmlFor="sign-in-email"
             label="Email"
             type="email"
-            id="email"
+            id="sign-in-email"
             name="email"
             value={email}
             onChange={onChangeHandler}
@@ -68,9 +67,9 @@ const SignInForm = () => {
 
           <FormInput
             label="Password"
-            htmlFor="password"
+            htmlFor="sign-in-password"
             type="password"
-            id="password"
+            id="sign-in-password"
             name="password"
             value={password}
             onChange={onChangeHandler}
